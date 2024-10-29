@@ -1,10 +1,24 @@
-import { Button } from "@/components/ui/button"
+import { Grid, GridItem } from "@chakra-ui/react";
 
 function App() {
-
   return (
-    <Button colorPalette={"blue"}>Click me</Button>
-  )
+    <Grid
+      templateAreas={{
+        base: `"nav" "main"`,
+        lg: `"nav nav" "aside main"`, // 1024px
+      }}
+    >
+      <GridItem area="nav" bg={"coral"} >
+        nav
+      </GridItem>
+      <GridItem area="aside" bg={"gold"} hideBelow={'lg'}>
+        aside
+      </GridItem>
+      <GridItem area="main" bg={"dodgerblue"}>
+        main
+      </GridItem>
+    </Grid>
+  );
 }
 
-export default App
+export default App;
